@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# corpora
+corpus
+
+# temporary folder
+temp
+
+# tensorflow board
+logs
