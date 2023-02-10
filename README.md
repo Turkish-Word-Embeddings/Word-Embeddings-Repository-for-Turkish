@@ -23,12 +23,12 @@ Please keep in mind that you need to have `Microsoft Visual C++ 14.0` to be able
     ```
 * If the `txt` version includes redundant lines, you can format your `txt` file using the `txt_formatter` script, which basically re-creates the file using the provided _stride_ and _offset_ values. For example, to format the `wiki.tr.txt.7z` file, you can use the following command:
     ```bash
-    python preprocess/txt_formatter.py -i `wiki.tr.txt.7z` -s 4 -f 1 
+    python preprocess/txt_formatter.py -i wiki.tr.txt.7z -s 4 -f 1 
     ```
     If not provided, `--output` defaults to the input file. `--stride` and `--offset` default to 1 and 0, respectively. _stride_ stands for the number of lines to skip between consecutive sentences and _offset_ stands for the number of lines to skip at the beginning of the file.
 * Additionally, you can use the `analyzer` script to get vocabulary size and maximum sequence length in your corpus. For example, to get the vocabulary size and maximum sequence length of the `wiki.tr.txt.7z` file, you can use the following command:
     ```bash
-    python preprocess/analyzer.py -i wiki.tr.txt.7z
+    python preprocess/txt_analyzer.py -i wiki.tr.txt.7z
     ```
 
 ## Models
