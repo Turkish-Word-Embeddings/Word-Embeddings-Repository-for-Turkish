@@ -32,9 +32,9 @@ Please keep in mind that you need to have `Microsoft Visual C++ 14.0` to be able
     ```
 
 ## Models
-* [TensorFlow Word2Vec (Skip-Gram with Negative Sampling)]() 
-* [Gensim Word2Vec (Skip-Gram/CBOW with Negative Sampling/Hierarchical Softmax)]() 
-* [FastText (Skip-Gram/CBOW with Softmax/Negative Sampling/Hierarchical Softmax/One-vs-All)]()
+* [TensorFlow Word2Vec (Skip-Gram with Negative Sampling)](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/blob/main/word2vec/tf_w2v.ipynb) 
+* [Gensim Word2Vec (Skip-Gram/CBOW with Negative Sampling/Hierarchical Softmax)](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/blob/main/word2vec/gensim_w2v.ipynb) 
+* [FastText (Skip-Gram/CBOW with Softmax/Negative Sampling/Hierarchical Softmax/One-vs-All)](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/blob/main/fasttext/fasttext.ipynb)
 
 
 ## Open-source Turkish Corpora
