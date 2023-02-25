@@ -39,7 +39,7 @@ Please keep in mind that you need to have `Microsoft Visual C++ 14.0` to be able
 
 ## Open-source Turkish Corpora
 * [TULAP Turkish-English Parallel Corpus](https://tulap.cmpe.boun.edu.tr/repository/xmlui/handle/20.500.12913/19)
-
+* [TULAP Web Corpus](https://tulap.cmpe.boun.edu.tr/repository/xmlui/handle/20.500.12913/16)
 
 ## References
 1. https://en.wikipedia.org/wiki/Word_embedding

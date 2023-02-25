@@ -131,6 +131,9 @@ dmypy.json
 # corpora
 corpus
 
+# word similarity and analogy
+tasks
+
 # temporary folder
 temp
 
