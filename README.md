@@ -40,6 +40,10 @@ Please keep in mind that you need to have `Microsoft Visual C++ 14.0` to be able
 ## Open-source Turkish Corpora
 * [TULAP Turkish-English Parallel Corpus](https://tulap.cmpe.boun.edu.tr/repository/xmlui/handle/20.500.12913/19)
 * [TULAP Web Corpus](https://tulap.cmpe.boun.edu.tr/repository/xmlui/handle/20.500.12913/16)
+* [Turkish Text](https://github.com/onurgu/linguistic-features-in-turkish-word-representations/releases/tag/v1.0) - [\[8\]](https://www.cmpe.boun.edu.tr/~onurgu/publication/gungor-2017-linguistic/gungor-2017-linguistic.pdf)
+
+## Task DataSet (Analogy & Similarity)
+* [Analogy Test Set](https://github.com/onurgu/linguistic-features-in-turkish-word-representations/releases/tag/v1.0) - [\[8\]](https://www.cmpe.boun.edu.tr/~onurgu/publication/gungor-2017-linguistic/gungor-2017-linguistic.pdf)
 
 ## References
 1. https://en.wikipedia.org/wiki/Word_embedding
@@ -49,3 +53,4 @@ Please keep in mind that you need to have `Microsoft Visual C++ 14.0` to be able
 5. Bojanowski, P., Grave, E., Joulin, A., Mikolov, T. (2017). Enriching word vectors with subword information. Transactions of the Association for Computational Linguistics, Vol.5, p.135-146.
 6. Devlin, J., Chang, M. W., Lee, K., Toutanova, K. (2018). Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.
 7. Peters, M. E., Neumann, M., Iyyer, M., Gardner, M., Clark, C., Lee, K., Zettlemoyer, L. (2018). Deep contextualized word representations. arXiv preprint arXiv:1802.05365.
+8. Onur Gungor, Eray Yildiz, "Linguistic Features in Turkish Word Representations - Türkçe Sözcük Temsillerinde Dilbilimsel Özellikler", 2017 25th Signal Processing and Communications Applications Conference (SIU), Antalya, 2017.
