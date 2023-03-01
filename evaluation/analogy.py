@@ -65,8 +65,6 @@ def score_analogy(model, analogy, topn):
         positive=[analogy[1], analogy[2]],
         negative=[analogy[0]],
         topn=topn)
-
-    #print(results)
     
     return 1 / ([x[0] for x  in results].index(analogy[3]) + 1)
 
