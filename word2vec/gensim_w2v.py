@@ -5,19 +5,20 @@ import logging
 from gensim.models import Word2Vec
 
 class LineSentences(object):
-    def __init__(self, filename):
-        self.filename = filename
+    def __init__(self, filenames):
+        self.filenames = filenames
     
     # memory-friendly iterator
     def __iter__(self):
-        for line in open(self.filename, "r", encoding="utf-8"):
-            yield line.strip().split()
+        for filename in self.filenames:
+            for line in open(filename, "r", encoding="utf-8"):
+                yield line.strip().split()
 
 # Assumption: Provided input is a txt file with one sentence per line.
 # Example usage: python word2vec/gensim_w2v.py -i "corpus/Turkish-English Parallel Corpus.txt" -o "word2vec.model"
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("-i", "--input",  help="Input txt file. If file name includes space(s), enclose it in double quotes.", required=True)
+    parser.add_argument("-i", "--input", nargs='+', help="Input txt file. If file name includes space(s), enclose it in double quotes.", required=True)
     parser.add_argument("-o", "--output",  help="Output file (trained model). If file name includes space(s), enclose it in double quotes.", default = "word2vec.model")
     parser.add_argument("-m", "--min_count",  help="Minimum frequency for a word. All words with total frequency lower than this will be ignored. Defaults to 5 if not provided.", default = 5, type = int)
     parser.add_argument("-e", "--emb",  help="dimensionality of word vectors, defaults to 128", default = 128, type = int)
@@ -27,7 +28,7 @@ if __name__ == '__main__':
     parser.add_argument("-hs", "--hs",  help="use hierarchical softmax, defaults to 0 (negative sampling)", default = 0, type = int)
     parser.add_argument("-n", "--negative",  help="number of negative samples, defaults to 5", default = 5, type = int)
     args = parser.parse_args()
-
+    
     input = args.input
     output = args.output
     emb = args.emb

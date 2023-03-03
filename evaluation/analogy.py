@@ -16,7 +16,7 @@ analogy_config = {
     "data_directory": "tasks/analogy",
     "model": {
         "type": "word2vec_keyedVectors", # or word2vec_keyedVectors
-        "filename": "word2vec.model",
+        "filename": "word2vec_10epoch.model",
         "binary": True
     },
     "experiments": experiments
@@ -39,15 +39,6 @@ elif model_config["type"] == "word2vec_model":
     model = gensim.models.Word2Vec.load(model_path).wv
 elif model_config["type"] == "fasttext_model":
     model = loaded_model = gensim.models.fasttext.FastText.load(model_path).wv
-
-class LineSentences(object):
-    def __init__(self, filename):
-        self.filename = os.path.join(analogy_config["data_directory"], filename)
-    
-    # memory-friendly iterator
-    def __iter__(self):
-        for line in open(self.filename, "r", encoding="utf-8"):
-            yield line.strip().split()
             
 def load_file(filename):
     f = open(
