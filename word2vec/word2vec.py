@@ -3,6 +3,7 @@ import multiprocessing
 import logging
 
 from gensim.models import Word2Vec
+from gensim.models import KeyedVectors
 
 class LineSentences(object):
     def __init__(self, filenames):
@@ -60,6 +61,12 @@ if __name__ == '__main__':
                 sg = sg,
                 hs = hs,
                 negative = negative,
+                compute_loss=True,
                 workers=multiprocessing.cpu_count())
     # The full model can be stored/loaded via its save() and load() methods.
     model.wv.save_word2vec_format(output, binary=True)
+    training_loss = model.get_latest_training_loss()
+    print(training_loss)
+
+    word_vectors = KeyedVectors.load_word2vec_format(output, binary=True)
+    word_vectors.most_similar_cosmul(positive=['kadın', 'kral'], negative=['adam'])
