@@ -1,19 +1,16 @@
 import argparse
 import multiprocessing
 import logging
+import os, sys
+
+# get the path of the directory containing the current script
+parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(parent_dir)
 
 from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
-
-class LineSentences(object):
-    def __init__(self, filenames):
-        self.filenames = filenames
-    
-    # memory-friendly iterator
-    def __iter__(self):
-        for filename in self.filenames:
-            for line in open(filename, "r", encoding="utf-8"):
-                yield line.strip().split()
+from utils.utils import LineSentences
+from utils.utils import callback
 
 # Assumption: Provided input is a txt file with one sentence per line.
 # Example usage: python word2vec/word2vec.py -i "corpus/bounwebcorpus.txt" -o "word2vec.model"
@@ -21,11 +18,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input", nargs='+', help="Input txt file. If file name includes space(s), enclose it in double quotes.", required=True)
     parser.add_argument("-o", "--output",  help="Output file (trained model). If file name includes space(s), enclose it in double quotes.", default = "word2vec.model")
-    parser.add_argument("-m", "--min_count",  help="Minimum frequency for a word. All words with total frequency lower than this will be ignored. Defaults to 5 if not provided.", default = 5, type = int)
-    parser.add_argument("-e", "--emb",  help="dimensionality of word vectors, defaults to 128", default = 128, type = int)
+    parser.add_argument("-m", "--min_count",  help="Minimum frequency for a word. All words with total frequency lower than this will be ignored. Defaults to 10 if not provided.", default = 10, type = int)
+    parser.add_argument("-e", "--emb",  help="dimensionality of word vectors, defaults to 300", default = 300, type = int)
     parser.add_argument("-w", "--window",  help="window size, defaults to 5", default = 5, type = int)
     parser.add_argument("-ep", "--epoch",  help="number of epochs, defaults to 5", default = 5, type = int)
-    parser.add_argument("-sg", "--sg",  help="use skip-gram model, defaults to 0 (CBOW)", default = 0, type = int)
+    parser.add_argument("-sg", "--sg",  help="use skip-gram model, defaults to 1 (Skip-gram)", default = 1, type = int)
     parser.add_argument("-hs", "--hs",  help="use hierarchical softmax, defaults to 0 (negative sampling)", default = 0, type = int)
     parser.add_argument("-n", "--negative",  help="number of negative samples, defaults to 5", default = 5, type = int)
     args = parser.parse_args()
@@ -62,11 +59,10 @@ if __name__ == '__main__':
                 hs = hs,
                 negative = negative,
                 compute_loss=True,
-                workers=multiprocessing.cpu_count())
+                workers=multiprocessing.cpu_count(),
+                callbacks=[callback()])
     # The full model can be stored/loaded via its save() and load() methods.
     model.wv.save_word2vec_format(output, binary=True)
-    training_loss = model.get_latest_training_loss()
-    print(training_loss)
 
     word_vectors = KeyedVectors.load_word2vec_format(output, binary=True)
     word_vectors.most_similar_cosmul(positive=['kadın', 'kral'], negative=['adam'])
