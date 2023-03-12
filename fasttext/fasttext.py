@@ -49,8 +49,6 @@ if __name__ == '__main__':
 
     model.build_vocab(corpus_iterable=LineSentences(args.input))
     model.train(corpus_iterable=LineSentences(args.input), epochs = model.epochs, total_examples=model.corpus_count, compute_loss=True)
-    loss = model.get_latest_training_loss()
-    print("Loss: {}".format(loss)) 
 
     with tempfile.NamedTemporaryFile(prefix=args.output, delete=False) as tmp:   
         model.save(tmp.name, separately=[])
