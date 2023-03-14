@@ -14,7 +14,7 @@ git clone <url> <path>
 python -m venv env  # Create a virtual environment called env
 pip install -r requirements.txt
 ```
-Please keep in mind that you need to have `Microsoft Visual C++ 14.0` to be able to use `fasttext` module. You can download it from [here](https://visualstudio.microsoft.com/visual-cpp-build-tools/).
+
 ### Preprocess
 * To learn the embedding vectors for Turkish words, we have to use a corpus. Put your corpus file into the working directory. 
 * If they are `7-zip` files, you can first use the corresponding script to convert them into `txt` file. For example, to convert `wiki.tr.txt.7z` file, use the following command. (`--output` indicates the output folder for your `txt` file to be stored. If you do not specify it, the output file will be stored in the working directory.):
