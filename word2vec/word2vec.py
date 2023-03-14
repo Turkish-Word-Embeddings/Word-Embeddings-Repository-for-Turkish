@@ -22,9 +22,10 @@ if __name__ == '__main__':
     parser.add_argument("-e", "--emb",  help="dimensionality of word vectors, defaults to 300", default = 300, type = int)
     parser.add_argument("-w", "--window",  help="window size, defaults to 5", default = 5, type = int)
     parser.add_argument("-ep", "--epoch",  help="number of epochs, defaults to 5", default = 5, type = int)
-    parser.add_argument("-sg", "--sg",  help="use skip-gram model, defaults to 1 (Skip-gram)", default = 1, type = int)
-    parser.add_argument("-hs", "--hs",  help="use hierarchical softmax, defaults to 0 (negative sampling)", default = 0, type = int)
+    parser.add_argument("-sg", "--sg",  help="use skip-gram model, defaults to 1 (Skip-gram)", default = 1, type = int, choices=[0, 1])
+    parser.add_argument("-hs", "--hs",  help="use hierarchical softmax, defaults to 0 (negative sampling)", default = 0, type = int, choices=[0, 1])
     parser.add_argument("-n", "--negative",  help="number of negative samples, defaults to 5", default = 5, type = int)
+    parser.add_argument("-wl", "--window_alignment",  help="alignment of the training window, left if -1, right if 1 and centered if 0. Defaults to 0.", default = 0, type = int, choices=[-1, 0, 1])
     args = parser.parse_args()
     
     input = args.input
@@ -36,6 +37,7 @@ if __name__ == '__main__':
     hs = args.hs
     negative = args.negative
     min_count = args.min_count
+    window_alignment = args.window_alignment
 
     """
     Word2vec accepts several parameters that affect both training speed and quality.
@@ -59,6 +61,7 @@ if __name__ == '__main__':
                 hs = hs,
                 negative = negative,
                 compute_loss=True,
+                window_alignment=window_alignment,
                 workers=multiprocessing.cpu_count(),
                 callbacks=[callback()])
     # The full model can be stored/loaded via its save() and load() methods.
