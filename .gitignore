@@ -143,3 +143,6 @@ logs
 # models
 *.model
 *.wordvectors
+
+# metadata
+*.nlp_metadata
