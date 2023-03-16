@@ -142,3 +142,6 @@ logs
 
 # models
 *.model
+
+# metadata
+*.nlp_metadata
