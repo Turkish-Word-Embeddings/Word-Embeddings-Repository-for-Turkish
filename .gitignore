@@ -142,3 +142,4 @@ logs
 
 # models
 *.model
+*.wordvectors
