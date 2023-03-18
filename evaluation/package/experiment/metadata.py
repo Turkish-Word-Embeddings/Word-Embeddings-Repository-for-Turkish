@@ -16,6 +16,7 @@ class MetaData:
         self.logger = logger
         self._metadata = None
         self._metadata_existed_before = None
+        self._files_in_folder = None
         self._save_metadata_on_exit = False
 
     def __enter__(self):
@@ -58,6 +59,9 @@ class MetaData:
 
     @property   
     def files_in_folder(self):
+
+        if self._files_in_folder != None:
+            return self._files_in_folder
         try:
             files = os.listdir(self.folder_path)
             type_length = len(self.file_type)
@@ -66,6 +70,7 @@ class MetaData:
                     lambda file: file[-type_length:] == self.file_type,
                     files))
             self.logger.log(f"INFO: Found files: {files}")
+            self._files_in_folder = files
             return files
 
         except FileNotFoundError:
@@ -104,3 +109,7 @@ class MetaData:
     @property
     def metadata_path(self):
         return os.path.join(self.folder_path, self.output)
+
+    @classmethod
+    def get_folder_name(cls, folder_path):
+        return os.path.normpath(folder_path).split(os.path.sep)[-1]

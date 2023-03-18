@@ -61,7 +61,7 @@ def evaluate_analogy_folder(
 
             results[file] = mean_reciprocal_rank
 
-    file_name = os.path.normpath(folder_path).split(os.path.sep)[-1]
+    file_name = MetaData.get_folder_name(folder_path)
     with MetaData(".", "txt", file_name + extension, MockLogger()) as md:
         for file, result in results.items():
             md.update_metadata(file, result)
