@@ -12,7 +12,7 @@ def get_experiment_args():
     )
     parser.add_argument(
         "-e",
-        "--extension",help="Metadata file extension",
+        "--extension", help="Metadata file extension",
         default=".nlp_metadata"
     )
     parser.add_argument(
@@ -76,13 +76,12 @@ Morphological Categories & \\multicolumn{1}{l|}{Number of examples} & \\multicol
         dump_file.write("\\% \\\\ \\hline\n")
 
     # writing overall
-    acc = [0,0,0,0]
+    acc = [0, 0, 0, 0]
     for row in pdf:
         for i in range(4):
-            acc[i] += row[i+1]
-    for i in range(1,4):
-        acc[i] /= len(common_files)
-    
+            acc[i] += row[i + 1]
+    for i in range(1, 4):
+        acc[i] /= len(common_files)  
     dump_file.write(r"\rowcolor{yellow}\multicolumn{1}{|c|}{Overall} & ")
     dump_file.write(" & ".join([str(i) for i in acc]))
     dump_file.write(r"\%\\ \hline")

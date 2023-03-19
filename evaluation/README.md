@@ -22,7 +22,7 @@ Note that multiple analogy folders can be passed at the same time.
 If the function is being called for the first time with this particular model instance, user will be prompted to provide information about how the model loaded. In this case, the model is a word2vec binary, which needs to be loaded with the `Word2VecWrapper.from_keyed_vectors` method. Program prompts the user to enter which class and method will be used like below. Additionally, it asks for parameters apart from `model_path`:
 
 ```
- >>> python evaluate.py -m "../tmp/model/turkish-word2vec-binary.model" -af ../tasks/analogy -af "../tasks/analogy/test file"
+ >>> python evaluate.py -m "../tmp/model/turkish-word2vec-binary.model" -af ../tasks/analogy/test1 -af "../tasks/analogy/test2"
 
 WARNING: No metadata about the model `../tmp/model/turkish-word2vec-binary.model`was found. Please configure how the model is to be loaded below.
  -> Class of the model (see classes in `model.py`): Word2VecWrapper

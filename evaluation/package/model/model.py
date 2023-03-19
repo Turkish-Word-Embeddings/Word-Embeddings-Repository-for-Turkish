@@ -24,7 +24,7 @@ class Word2VecWrapper(ModelWrapper):
             file_path, delimiter=delimiter, encoding=encoding)
 
     @classmethod
-    def from_keyed_vectors(cls, model_path, binary=False, no_header=False):
+    def from_keyed_vectors(cls, model_path, binary=True, no_header=False):
         wv = gensim.models.KeyedVectors.load_word2vec_format(
             model_path,
             binary=binary,

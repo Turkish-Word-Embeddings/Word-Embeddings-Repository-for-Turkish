@@ -15,7 +15,7 @@ if __name__ == "__main__":
         default="txt")
     parser.add_argument(
         "-e",
-        "--extension",help="Metadata file extension",
+        "--extension", help="Metadata file extension",
         default=".nlp_metadata")
     args = parser.parse_args()
 

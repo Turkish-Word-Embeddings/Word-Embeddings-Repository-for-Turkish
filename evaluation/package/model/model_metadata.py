@@ -42,7 +42,7 @@ class Model_MetaData:
         while True:
             parameters = {"model_path": self.model_path}
             kls = input(" -> Class of the model (see classes in `model.py`): ")
-            method = input(" -> abstractmethod which loads the model: ")
+            method = input(" -> class method which loads the model: ")
             
             while True:
                 not_done = get_yes_no_input(f"Will this method require parameters in addition to `{parameters.keys()}`?")
