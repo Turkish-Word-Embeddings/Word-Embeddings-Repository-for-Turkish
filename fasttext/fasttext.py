@@ -48,7 +48,7 @@ if __name__ == '__main__':
 
     model.build_vocab(corpus_iterable=LineSentences(args.input))
     model.train(corpus_iterable=LineSentences(args.input), epochs = model.epochs, total_examples=model.corpus_count, compute_loss=True)
-    model.save(args.output)
+    model.wv.save_word2vec_format(args.output, binary=True)
 
     word_vectors = FastText.load(args.output).wv
     print(word_vectors.most_similar_cosmul(positive=['kadın', 'kral'], negative=['adam']))
