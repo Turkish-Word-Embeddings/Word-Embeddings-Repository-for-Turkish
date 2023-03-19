@@ -78,10 +78,12 @@ Morphological Categories & \\multicolumn{1}{l|}{Number of examples} & \\multicol
     # writing overall
     acc = [0, 0, 0, 0]
     for row in pdf:
-        for i in range(4):
-            acc[i] += row[i + 1]
+        acc[0] += row[1]
+        for i in range(1, 4):
+            # import pdb; pdb.set_trace()
+            acc[i] += row[i + 1] * row[1]
     for i in range(1, 4):
-        acc[i] /= len(common_files)  
+        acc[i] /= acc[0]
     dump_file.write(r"\rowcolor{yellow}\multicolumn{1}{|c|}{Overall} & ")
     dump_file.write(" & ".join([str(i) for i in acc]))
     dump_file.write(r"\%\\ \hline")
