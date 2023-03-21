@@ -51,11 +51,10 @@ Model is evaluated with the given tasks and results of each task is saved to the
 You can choose a folder with `-f` and create a metadata file for it. This will be used as reference when creating a latex table from the task.
 
 ```
- >>> python populate_task_metadata.py -f ../tasks
+ >>> python populate_task_metadata.py -f ../tasks -a mrr -a topn
 INFO: No metadata found in `../tasks`. Initialising with empty metadata
-INFO: Found files: ['analogy.txt', 'similarity.txt']
- -> Reference score for `analogy.txt`: 12
- -> Reference score for `similarity.txt`: 32
-{'analogy.txt': 12.0, 'similarity.txt': 32.0}
+INFO: Found files: ['file1.txt', 'file2.txt']
+ -> `mrr` metric for `file1.txt`: 56
+ -> `mrr` metric for `file2.txt`: 23
 INFO: Metadata of `../tasks` is updated
 ```

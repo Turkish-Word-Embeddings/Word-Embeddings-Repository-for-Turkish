@@ -10,9 +10,9 @@ def evaluate_similarity_folder(
         extension: str,
         verbose: bool = True
 ):
-    
+    metadata_attrs = ["pearson", "spearman", "oov-ratio"]
     results = {}
-    with MetaData(folder_path, file_type) as md:
+    with MetaData(folder_path, file_type, metadata_attrs) as md:
         for file in md.files_in_folder:
             out = model.evaluate_word_pairs(
                 os.path.join(folder_path, file),
@@ -31,10 +31,14 @@ def evaluate_similarity_folder(
                 print(f"OOV Ratio: {oov_ratio}")
                 print("-"*50)
 
-            results[file] = pearson_result
+            results[file] = {
+                "pearson": pearson_result,
+                "spearman": spearman[0] * 100,
+                "oov-ratio": oov_ratio
+            }
 
     file_name = os.path.normpath(folder_path).split(os.path.sep)[-1]
-    with MetaData(".", "txt", file_name + extension, MockLogger()) as md:
+    with MetaData(".", "txt", metadata_attrs, file_name + extension, MockLogger()) as md:
         for file, result in results.items():
             md.update_metadata(file, result)
 

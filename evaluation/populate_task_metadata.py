@@ -14,6 +14,13 @@ if __name__ == "__main__":
         help="File types in the folder to add metadata for.",
         default="txt")
     parser.add_argument(
+        "-a",
+        "--attribute",
+        help="Attributes in the metadata file",
+        required=True,
+        action="append"
+    )
+    parser.add_argument(
         "-e",
         "--extension", help="Metadata file extension",
         default=".nlp_metadata")
@@ -22,5 +29,6 @@ if __name__ == "__main__":
     add_metadata_file(
         args.folder,
         args.file_type,
-        args.extension
+        args.extension,
+        args.attribute
     )

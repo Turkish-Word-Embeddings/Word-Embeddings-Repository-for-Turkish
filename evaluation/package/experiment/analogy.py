@@ -23,9 +23,8 @@ def evaluate_analogy_folder(
         extension: str,
         verbose: bool = True
 ):
-    
     results = {}
-    with MetaData(folder_path, file_type) as md:
+    with MetaData(folder_path, file_type, ["mrr"]) as md:
         for file in md.files_in_folder:
             analogies = md.load_file(file)
     
@@ -59,10 +58,12 @@ def evaluate_analogy_folder(
                 print(f"repository miss ratio: {repository_miss_ratio}")
                 print("-"*50)
 
-            results[file] = mean_reciprocal_rank
+            results[file] = {
+                "mrr": mean_reciprocal_rank,
+                "topn-miss-ratio": topn_miss_ratio}
 
     file_name = MetaData.get_folder_name(folder_path)
-    with MetaData(".", "txt", file_name + extension, MockLogger()) as md:
+    with MetaData(".", "txt", ["mrr", "topn-miss-ratio"], file_name + extension, MockLogger()) as md:
         for file, result in results.items():
             md.update_metadata(file, result)
 

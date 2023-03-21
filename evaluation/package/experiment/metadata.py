@@ -1,3 +1,5 @@
+import pandas as pd
+from typing import Optional, List, Dict
 import os
 from ..log import BaseLogger, ConsoleLogger
 
@@ -7,14 +9,16 @@ class MetaData:
             self,
             folder_path: str,
             file_type: str,
+            metadata_attrs: List[str],
             output: str = ".nlp_metadata",
-            logger: BaseLogger = ConsoleLogger()
+            logger: BaseLogger = ConsoleLogger(),
     ):
         self.folder_path = folder_path
         self.file_type = file_type
         self.output = output
         self.logger = logger
-        self._metadata = None
+        self.metadata_attrs = metadata_attrs
+        self._metadata: Optional[pd.DataFrame] = None
         self._metadata_existed_before = None
         self._files_in_folder = None
         self._save_metadata_on_exit = False
@@ -25,15 +29,21 @@ class MetaData:
 
     def load_metadata(self):
         try:
-            file = open(self.metadata_path, "r", encoding="utf-8")
             self.logger.log(f"INFO: Loading existing metadata file in `{self.folder_path}`")
-            lines = [line.split(",") for line in file.readlines()]
-            file.close()
-
             self._metadata_existed_before = True
-            self._metadata = {line[0]: float(line[1]) for line in lines}
+            self._metadata = pd.read_csv(self.metadata_path, encoding="utf-8")
+            self._metadata = self._metadata.round(4)
+            self._metadata.set_index("filename", inplace=True)
 
-            if len(self.files_in_folder) != set(self._metadata.keys()).intersection(self.files_in_folder):
+            if len(self._metadata.columns) != len(self.metadata_attrs):
+                raise ValueError(
+                    "Number of attributes of the metadata and the file"
+                    " do not match. Please reduce number of attributes"
+                    " or delete the current file.\n"
+                    f" - Attributes in the file: {list(self._metadata.columns)}\n"
+                    f" - Expected: {self.metadata_attrs}")
+
+            if len(self.files_in_folder) != set(self._metadata.index).intersection(self.files_in_folder):
                 self.logger.log(
                     "WARNING: File names in the folder and the metadata"
                     " are different.")
@@ -42,20 +52,18 @@ class MetaData:
             self.logger.log(f"INFO: No metadata found in `{self.folder_path}`."
                   " Initialising with empty metadata")
             self._metadata_existed_before = False
-            self._metadata = {}
+            self._metadata: pd.DataFrame = pd.DataFrame(columns=self.metadata_attrs)
         except Exception:
             self.logger.log("ERROR: Couldn't load metadata file.")
             raise
 
-    def update_metadata(self, file_name: str, score: float):
-        self._metadata[file_name] = score
+    def update_metadata(self, file_name: str, scores: Dict[str, float]):
+        self._metadata.loc[file_name] = [scores[metric] for metric in self.metadata_attrs]
         self._save_metadata_on_exit = True
 
     def save_metadata(self):
-        _file = open(self.metadata_path, "w", encoding="utf-8")
-        for file in self:
-            _file.write(f"{file},{self[file]}\n")
-        _file.close()
+        self._metadata.index.name = "filename"
+        self._metadata.to_csv(self.metadata_path, index=True)
 
     @property   
     def files_in_folder(self):
@@ -93,7 +101,7 @@ class MetaData:
                   " the metadata file.")
 
     def __getitem__(self, filename):
-        return self._metadata[filename]
+        return self._metadata.loc[filename, :]
     
     def __iter__(self):
         files = list(self._metadata.keys())
