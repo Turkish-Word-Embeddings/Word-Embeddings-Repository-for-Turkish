@@ -44,6 +44,7 @@ pip install -r requirements.txt
 
 ## Task DataSet (Analogy & Similarity)
 * [Analogy Test Set](https://github.com/onurgu/linguistic-features-in-turkish-word-representations/releases/tag/v1.0) - [\[8\]](https://www.cmpe.boun.edu.tr/~onurgu/publication/gungor-2017-linguistic/gungor-2017-linguistic.pdf)
+* [Analogy/Similarity Test Set](https://github.com/bunyamink/word-embedding-models/tree/master/datasets)
 
 ## References
 1. https://en.wikipedia.org/wiki/Word_embedding
