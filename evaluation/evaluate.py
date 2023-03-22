@@ -26,7 +26,8 @@ def get_experiment_args():
         "-topn",
         "--topn",
         help="topn value to use",
-        default=10
+        default=10,
+        type = int
     )
     parser.add_argument(
         "-ft",
