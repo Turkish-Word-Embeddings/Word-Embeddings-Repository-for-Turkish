@@ -39,8 +39,8 @@ pip install -r requirements.txt
 
 ## Open-source Turkish Corpora
 * [TULAP Turkish-English Parallel Corpus](https://tulap.cmpe.boun.edu.tr/repository/xmlui/handle/20.500.12913/19)
-* [TULAP Web Corpus](https://tulap.cmpe.boun.edu.tr/repository/xmlui/handle/20.500.12913/16)
-* [Turkish Text](https://github.com/onurgu/linguistic-features-in-turkish-word-representations/releases/tag/v1.0) - [\[8\]](https://www.cmpe.boun.edu.tr/~onurgu/publication/gungor-2017-linguistic/gungor-2017-linguistic.pdf)
+* [BounWebCorpus](https://tulap.cmpe.boun.edu.tr/repository/xmlui/handle/20.500.12913/16)
+* [HuaweiCorpus](https://github.com/onurgu/linguistic-features-in-turkish-word-representations/releases/tag/v1.0) - [\[8\]](https://www.cmpe.boun.edu.tr/~onurgu/publication/gungor-2017-linguistic/gungor-2017-linguistic.pdf)
 
 ## Task DataSet (Analogy & Similarity)
 * [Analogy Test Set](https://github.com/onurgu/linguistic-features-in-turkish-word-representations/releases/tag/v1.0) - [\[8\]](https://www.cmpe.boun.edu.tr/~onurgu/publication/gungor-2017-linguistic/gungor-2017-linguistic.pdf)
