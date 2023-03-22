@@ -32,7 +32,7 @@ class MetaData:
             self.logger.log(f"INFO: Loading existing metadata file in `{self.folder_path}`")
             self._metadata_existed_before = True
             self._metadata = pd.read_csv(self.metadata_path, encoding="utf-8")
-            self._metadata = self._metadata.round(4)
+            self._metadata = self._metadata.round(3)
             self._metadata.set_index("filename", inplace=True)
 
             if len(self._metadata.columns) != len(self.metadata_attrs):

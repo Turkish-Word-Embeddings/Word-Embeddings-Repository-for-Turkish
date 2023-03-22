@@ -64,7 +64,7 @@ Morphological Categories & \\multicolumn{1}{l|}{Number of examples} & \\multicol
     # writing files
     common_files = list(common_files)
     common_files.sort()
-    improvement = lambda latest, reference: round(((latest / reference) - 1) * 100, 4)
+    improvement = lambda latest, reference: round(((latest / reference) - 1) * 100, 2)
     pdf = [[
         file,
         number_of_examples[file],
@@ -88,7 +88,9 @@ Morphological Categories & \\multicolumn{1}{l|}{Number of examples} & \\multicol
         acc[i] /= acc[0]
     acc.append(improvement(acc[2], acc[3]))
     dump_file.write(r"\rowcolor{yellow}\multicolumn{1}{|c|}{Overall} & ")
-    dump_file.write(" & ".join([str(round(i, 4)) for i in acc]))
+    temp = [str(round(i, 3)) for i in acc[:-1]]
+    temp.append(str(round(acc[-1], 2)))
+    dump_file.write(" & ".join(temp))
     dump_file.write(r"\%\\ \hline")
 
     # writing footer
