@@ -13,7 +13,7 @@ from utils.utils import callback
 
 # paper: https://arxiv.org/pdf/1607.04606.pdf
 # Assumption: Provided input is a txt file with one sentence per line.
-# Example usage: python python fasttext/fasttext.py -i "corpus/bounwebcorpus.txt" "corpus/turkish-texts-tokenized.txt" -o "fasttext.model"
+# Example usage: python fasttext/fasttext.py -i "corpus/bounwebcorpus.txt" "corpus/turkish-texts-tokenized.txt" -o "fasttext.model"
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input",  nargs='+', help="Input txt file. If file name includes space(s), enclose it in double quotes.", required=True )
@@ -45,6 +45,7 @@ if __name__ == '__main__':
                 word_ngrams=args.wng,
                 workers=multiprocessing.cpu_count(),
                 callbacks=[callback()])
+
 
     model.build_vocab(corpus_iterable=LineSentences(args.input))
     model.train(corpus_iterable=LineSentences(args.input), epochs = model.epochs, total_examples=model.corpus_count, compute_loss=True)
