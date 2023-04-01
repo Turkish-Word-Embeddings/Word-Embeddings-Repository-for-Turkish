@@ -10,7 +10,7 @@ def evaluate_similarity_folder(
         extension: str,
         verbose: bool = True
 ):
-    metadata_attrs = ["pearson", "spearman", "oov-ratio"]
+    metadata_attrs = ["pearson", "pearson-p", "spearman", "spearman-p", "oov-ratio"]
     results = {}
     with MetaData(folder_path, file_type, metadata_attrs) as md:
         for file in md.files_in_folder:
@@ -33,7 +33,9 @@ def evaluate_similarity_folder(
 
             results[file] = {
                 "pearson": pearson_result,
+                "pearson-p": pearson[1],
                 "spearman": spearman[0] * 100,
+                "spearman-p": spearman[1],
                 "oov-ratio": oov_ratio
             }
 

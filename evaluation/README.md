@@ -8,6 +8,7 @@ There are two scripts:
 | - | - |
 | `evaluate.py` | Loads and runs a model on the given tasks. Generates an artifact for every task (every folder) which contains the score of the model on each file in the folder |
 | `populate_task_metadata.py` | Choose a folder and create a metadata file for it. Metadata file contains a lookup table of `file -> score`. Goal is to store reference statistics of tasks for generating latex tables |
+| `dump_analogy_latex_table` & `dump_similarity_latex_table` | After evaluating a model on a task and saving the results using `evaluate.py`, dump the latex table of the results |
 
 ## Usage of `evaluate.py`
 
@@ -57,4 +58,18 @@ INFO: Found files: ['file1.txt', 'file2.txt']
  -> `mrr` metric for `file1.txt`: 56
  -> `mrr` metric for `file2.txt`: 23
 INFO: Metadata of `../tasks` is updated
+```
+
+## Usage of Latex Table Scripts
+
+Similarity:
+```
+python evaluate.py -m <model-path> -sf ../tasks/similarity
+python dump_similarity_latex_table.py -f ../tasks/similarity
+```
+
+Analogy
+```
+python evaluate.py -m <model-path> -af "../tasks/analogy/fiil çekim ekleri"
+python dump_similarity_latex_table.py -f ../tasks/analogy/fiil çekim ekleri"
 ```
