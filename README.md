@@ -17,12 +17,8 @@ pip install -r requirements.txt
 * You can run the `.py` scripts or `.ipynb` notebooks following the instructions. For details, please refer to our [wiki](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/wiki).
 
 
-
-## Models
-* [TensorFlow Word2Vec (Skip-Gram with Negative Sampling)](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/blob/main/word2vec/tf_w2v.ipynb) 
-* [Gensim Word2Vec (Skip-Gram/CBOW with Negative Sampling/Hierarchical Softmax)](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/blob/main/word2vec/word2vec.ipynb) 
-* [FastText (Skip-Gram/CBOW with Negative Sampling/Hierarchical Softmax)](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/blob/main/fasttext/fasttext.ipynb)
-
+## Releases
+* [Turkish Word Vectors, Corpus and Evaluation Dataset](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/releases/tag/v1.0.0)
 
 ## Open-source Turkish Corpora
 * [BounWebCorpus](https://tulap.cmpe.boun.edu.tr/repository/xmlui/handle/20.500.12913/16)
