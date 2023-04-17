@@ -143,6 +143,7 @@ logs
 # models
 *.model
 *.wordvectors
+elmo/turkish/*
 
 # metadata
 *.nlp_metadata
