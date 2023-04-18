@@ -31,6 +31,11 @@ class Word2VecWrapper(ModelWrapper):
             no_header=no_header
         )
         return cls(wv)
+    
+    @classmethod
+    def from_wordvectors(cls, model_path):
+        wv = gensim.models.KeyedVectors.load(model_path)
+        return cls(wv)
 
     @classmethod
     def from_model(cls, model_path):
