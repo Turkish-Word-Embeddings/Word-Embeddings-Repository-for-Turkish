@@ -44,4 +44,4 @@ class Word2VecWrapper(ModelWrapper):
     
     @classmethod
     def from_glove(cls, model_path):
-        raise NotImplementedError("Glove is not supported yet.")
+        cls.from_keyed_vectors(model_path, False, True)
