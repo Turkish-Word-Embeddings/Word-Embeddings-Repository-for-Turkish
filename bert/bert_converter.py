@@ -39,9 +39,17 @@ from gensim.models import KeyedVectors
 
 kw = KeyedVectors(768)
 
-wv = KeyedVectors.load_word2vec_format("word2vec_10epoch_cbow.wordvectors", binary=True)
-vocab = wv.index_to_key[:400000]
-del wv
+def load_vocab(vocab_path):
+    with open(vocab_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+        vocab = map(lambda line: line.strip().split()[0], lines)
+    return list(vocab)
+
+vocab_path = "../../../cahid.oz@boun.edu.tr/glove/out"
+vocab = load_vocab(vocab_path)
+# wv = KeyedVectors.load_word2vec_format("word2vec_10epoch_cbow.wordvectors", binary=True)
+# vocab = wv.index_to_key[:400000]
+# del wv
 
 batch_size = 1000
 c = 0
