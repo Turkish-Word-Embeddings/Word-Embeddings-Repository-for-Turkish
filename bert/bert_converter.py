@@ -11,6 +11,8 @@ tokenizer = AutoTokenizer.from_pretrained(_model)
 model = AutoModel.from_pretrained(_model)
 
 def embed(word):
+    # marked_text = "[CLS] " + word + " [SEP]"
+    # CLS aradaki cümlenin embedding'i olacak
     marked_text = "[CLS] " + word + " [SEP]"
 
     # Split the sentence into tokens.
@@ -29,25 +31,42 @@ def embed(word):
     # Run the text through BERT, and collect all of the hidden states produced
     # from all 12 layers. 
     with torch.no_grad():
-        return model(tokens_tensor, segments_tensors)[1][0].numpy()
+        results = model(tokens_tensor, segments_tensors)
+        return results[0][0, 0].numpy()
 
 # word2vec
 from gensim.models import KeyedVectors
 
 kw = KeyedVectors(768)
 
-vocab = list(tokenizer.vocab.keys())
+wv = KeyedVectors.load_word2vec_format("word2vec_10epoch_cbow.wordvectors", binary=True)
+vocab = wv.index_to_key[:400000]
+del wv
 
-batch_size = 100
+batch_size = 1000
+c = 0
+print_every = 5
+
+import time
+start = time.time()
 number_of_batches = len(vocab) // batch_size + 1
 
 for batch in range(number_of_batches):
     words_in_batch = vocab[:batch_size]
     words_in_batch = list(filter(lambda w: '#' not in w, words_in_batch))
-    print(words_in_batch)
     vocab = vocab[batch_size:]
 
     embeddings = [embed(word) for word in words_in_batch]
-    kw.add_vectors(words_in_batch, embeddings)
+    try:
+        kw.add_vectors(words_in_batch, embeddings)
+    except Exception as exc:
+        print("Failed in words:", words_in_batch)
+        print(exc)
+
+    if (batch / number_of_batches * 100) - c*print_every > print_every:
+        c += 1
+        end = time.time()
+        print(f"{c*print_every}% Done. Duration: {end-start}")
+        start = end
 
 kw.save_word2vec_format("bert_word2vec_dump.txt")
