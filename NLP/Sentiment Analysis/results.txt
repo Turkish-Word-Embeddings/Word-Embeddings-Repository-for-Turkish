@@ -1,2 +1,3 @@
 algorithm, test score
 word2vec-fasttext average, 0.888
+static elmo, 0.866
