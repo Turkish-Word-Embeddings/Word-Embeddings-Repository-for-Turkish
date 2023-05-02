@@ -1,6 +1,6 @@
 import torch
 
-class IMDBDataset:
+class Dataset:
     def __init__(self, reviews, targets):
         """
         Argument:
