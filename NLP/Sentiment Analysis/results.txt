@@ -1,5 +1,7 @@
 algorithm, test score
 word2vec-fasttext average, 0.888
 static elmo, 0.866
-word2vec, 0.861
+word2vec skip-gram, 0.861
+word2vec cbow, 0.899
 fasttext, 0.899
+glove, 0.871
