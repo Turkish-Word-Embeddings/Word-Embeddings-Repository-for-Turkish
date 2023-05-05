@@ -1,7 +1,21 @@
-algorithm, test score
-word2vec-fasttext average, 0.888
-static elmo, 0.866
-word2vec skip-gram, 0.861
-word2vec cbow, 0.899
-fasttext, 0.899
-glove, 0.871
+binary sentiment analysis
+---
+algorithm, accuracy score, f1
+word2vec-fasttext average, 0.898, 0.9255
+static elmo,  0.882, 0.9096
+word2vec skip-gram, 0.881, 0.9145
+word2vec cbow, 0.889, 0.9115
+fasttext, 0.906, 0.9303
+glove, 0.904, 0.9260
+bert, 0.875, 0.9076
+---
+multiclass sentiment analysis (ratings)
+---
+algorithm, test score, f1
+word2vec-fasttext average, 
+static elmo, 0.349923576614444,
+word2vec skip-gram, 
+word2vec cbow, 0.3589033244172717,
+fasttext,  0.35212074894917844,
+glove, 
+bert,
