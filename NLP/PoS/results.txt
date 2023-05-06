@@ -1,0 +1,11 @@
+PoS accuracy results
+---
+algorithm, accuracy score
+word2vec-fasttext average, 0.9369843602180481
+decontextualized elmo, 0.9367172122001648
+word2vec skip-gram,
+word2vec cbow, 
+fasttext, 
+glove, 
+decontextualized bert, 
+---
