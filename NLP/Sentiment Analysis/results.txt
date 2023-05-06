@@ -1,21 +1,25 @@
-binary sentiment analysis
+binary sentiment analysis (LSTM with n = 128 and dense layer with 512 nn)
 ---
 algorithm, accuracy score, f1
 word2vec-fasttext average, 0.898, 0.9255
-static elmo,  0.882, 0.9096
+decontextualized elmo,  0.882, 0.9096
 word2vec skip-gram, 0.881, 0.9145
 word2vec cbow, 0.889, 0.9115
 fasttext, 0.906, 0.9303
 glove, 0.904, 0.9260
-bert, 0.875, 0.9076
+decontextualized bert, 0.875, 0.9076
+
+conclusion: model is too complicated for the evaluation - it compensates the poor models
 ---
-multiclass sentiment analysis (ratings)
+binary sentiment analysis (LSTM with n = 8 and dense layer with 32 nn)
 ---
-algorithm, test score, f1
-word2vec-fasttext average, 
-static elmo, 0.349923576614444,
-word2vec skip-gram, 
-word2vec cbow, 0.3589033244172717,
-fasttext,  0.35212074894917844,
-glove, 
-bert,
+algorithm, accuracy score, f1
+word2vec-fasttext average, 0.8967181467181468, 0.9206
+decontextualized elmo,  0.8185328185328186, 0.8486
+word2vec skip-gram, 0.8996138996138996, 0.9226
+word2vec cbow, 0.8832046332046332, 0.9090
+fasttext, 0.8897200772200772, 0.9159
+glove, 0.8865830115830116, 0.9107
+decontextualized bert, 0.7748552123552124, 0.8262
+---
+
