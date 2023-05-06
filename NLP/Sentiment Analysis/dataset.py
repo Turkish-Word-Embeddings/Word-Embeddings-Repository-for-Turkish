@@ -19,7 +19,7 @@ class Dataset:
     def __getitem__(self, index):
         # given an index (item), return review and target of that index in torch tensor
         review = torch.tensor(self.reviews[index,:], dtype = torch.long)
-        target = torch.tensor(self.target[index], dtype = torch.float)
+        target = torch.tensor(self.target[index], dtype = torch.int64)
         
         return {'review': review,
                 'target': target}

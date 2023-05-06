@@ -44,12 +44,12 @@ msk = np.random.rand(len(df)) <= 0.8
 train = df[msk]
 test = df[~msk]
 # save train and test to csv
-train.to_csv("train.csv", index=False)
-test.to_csv("test.csv", index=False)
+train.to_csv("dataset1/train.csv", index=False)
+test.to_csv("dataset1/test.csv", index=False)
 
 df3 = df3.sample(frac=1).reset_index(drop=True)
 msk = np.random.rand(len(df3)) <= 0.8
 train3 = df3[msk]
 test3 = df3[~msk]
-train3.to_csv("train_neutral.csv", index=False)
-test3.to_csv("test_neutral.csv", index=False)
+train3.to_csv("dataset1/train_neutral.csv", index=False)
+test3.to_csv("dataset1/test_neutral.csv", index=False)
