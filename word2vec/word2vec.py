@@ -61,7 +61,7 @@ if __name__ == '__main__':
                 hs = hs,
                 negative = negative,
                 compute_loss=True,
-                window_alignment=window_alignment,
+                # window_alignment=window_alignment,
                 workers=multiprocessing.cpu_count(),
                 callbacks=[callback()])
     # The full model can be stored/loaded via its save() and load() methods.
