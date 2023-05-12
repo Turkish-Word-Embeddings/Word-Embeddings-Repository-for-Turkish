@@ -1,0 +1,15 @@
+
+NER accuracy results (lstm with n = 16 - 10 epoch)
+---
+algorithm, accuracy score
+word2vec-fasttext average, 0.9785486459732056 
+decontextualized elmo, 0.978419303894043 
+word2vec skip-gram, 0.9785723686218262 
+word2vec cbow, 0.9786779284477234
+fasttext, 0.9784958362579346
+glove, 0.978466808795929
+decontextualized bert, 0.978419303894043 
+---
+
+for results, i can use:
+https://tex.stackexchange.com/questions/681429/how-to-make-better-looking-tables-for-e-g-a-publication
