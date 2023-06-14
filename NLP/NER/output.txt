@@ -1,0 +1,9 @@
+Accuracy for w2v_sg using model lstm: 0.978
+Accuracy for w2v_sg using model lstm: 0.977
+Accuracy for w2v_cbow using model lstm: 0.975
+Accuracy for ft_sg using model lstm: 0.977
+Accuracy for w2v_ft_sg_avg using model lstm: 0.978
+Accuracy for glove using model lstm: 0.971
+Accuracy for dc_elmo using model lstm: 0.975
+Accuracy for dc_bert using model lstm: 0.977
+
