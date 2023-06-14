@@ -282,7 +282,6 @@ if __name__ == '__main__':
     valid_bs = args.valid_bs
     epochs = args.epochs
     max_len = args.max_len
-    model = args.model
 
     traindf, testdf, devdf = preprocess(args.dataset)
     if w == "all": word_embeddings = ["w2v_sg", "w2v_cbow", "ft_sg", "w2v_ft_sg_avg", "glove", "dc_elmo", "dc_bert"] # "x2_bert"
@@ -301,10 +300,10 @@ if __name__ == '__main__':
 
         model_ = train_lstm(X_padded, Y_final, devx_padded, devy_final, train_bs, valid_bs, epochs, word_tokenizer)
         acc = test_lstm(testx_padded, testy_final, model_)        
-        print(f"Accuracy for {w} using model {model}: {acc:.3f}")
+        print(f"Accuracy for {w} using lstm: {acc:.3f}")
         hist[w] = acc
 
     # write to output
     with open(args.output, "a") as f:
         for w, acc in hist.items():
-            f.write(f"Accuracy for {w} using model {model}: {acc:.3f}\n")
+            f.write(f"Accuracy for {w} using lstm: {acc:.3f}\n")
