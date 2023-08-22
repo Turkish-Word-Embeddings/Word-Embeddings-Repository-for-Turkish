@@ -44,6 +44,7 @@ pip install -r requirements.txt
 | Named entity recognition | Turkish National Newspapers with NER labels  [\[18\]](https://aclanthology.org/C18-1177/)  | 28,468               | 2,915               |
 | PoS tagging            | UD BOUN Treebank  [\[19\]](https://arxiv.org/abs/2002.10416)                       | 8,782                | 979                 |
 
+*Within the context of intrinsic evaluation, the employed datasets have been compiled and made accessible herein, with the aim of facilitating reproducibility and enabling their integration into further investigations by researchers. With regard to the dataset presented by Güngör et al., we partitioned it into designated subcategories and subsequently arranged and preserved these divisions within this repository. Similarity scores in *WordSimTr* are normalized to a numeric scale ranging from 0 to 10 for compatibility with other similarity pairs.*
 
 
 ## Requirements:
