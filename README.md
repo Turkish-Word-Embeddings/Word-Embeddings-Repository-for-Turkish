@@ -25,9 +25,26 @@ pip install -r requirements.txt
 * [HuaweiCorpus](https://github.com/onurgu/linguistic-features-in-turkish-word-representations/releases/tag/v1.0) - [\[8\]](https://www.cmpe.boun.edu.tr/~onurgu/publication/gungor-2017-linguistic/gungor-2017-linguistic.pdf)
 * [Turkish CoNLL17 Corpus]( http://vectors.nlpl.eu/repository/)
 
-## Task DataSet (Analogy & Similarity)
-* [Analogy Test Set](https://github.com/onurgu/linguistic-features-in-turkish-word-representations/releases/tag/v1.0) - [\[8\]](https://www.cmpe.boun.edu.tr/~onurgu/publication/gungor-2017-linguistic/gungor-2017-linguistic.pdf)
-* [Analogy/Similarity Test Set](https://github.com/bunyamink/word-embedding-models/tree/master/datasets)
+## Datasets for Intrinsic Evaluation
+
+| Dataset                                                      | Category            | \# Instances |
+|--------------------------------------------------------------|---------------------|--------------|
+| Dataset by Güngör *et al.* [\[12\]](https://ieeexplore.ieee.org/document/7960223/)                            | Syntactic Analogy  | 29,364       |
+| Dataset by Kurt [\[13\]](https://github.com/bunyamink/word-embedding-models/tree/master/datasets/analogy)                                            | Semantic Analogy   | 3,296        |
+| *WordSimTr* [\[14\]](https://wlv.openrepository.com/handle/2436/623576)                                                 | Syntactic Similarity | 140          |
+| *AnlamVer* [\[15\]](https://aclanthology.org/C18-1323/)                                                  | Semantic Similarity | 500          |
+
+
+## Datasets for Extrinsic Evaluation
+
+| Task                   | Dataset                                      | Train (\# sentences) | Test (\# sentences) |
+|------------------------|----------------------------------------------|----------------------|---------------------|
+| Sentiment analysis     | Turkish Movie Dataset  [\[16\]](https://www.researchgate.net/publication/269634534_Sentiment_Analysis_in_Turkish_Media)                 | 16,100               | 4,144               |
+| Sentiment analysis     | Turkish Sentiment Analysis Dataset  [\[17\]](https://huggingface.co/datasets/winvoker/turkish-sentiment-analysis-dataset)      | 286,854              | 32,873              |
+| Named entity recognition | Turkish National Newspapers with NER labels  [\[18\]](https://aclanthology.org/C18-1177/)  | 28,468               | 2,915               |
+| PoS tagging            | UD BOUN Treebank  [\[19\]](https://arxiv.org/abs/2002.10416)                       | 8,782                | 979                 |
+
+
 
 ## Requirements:
 
@@ -54,3 +71,15 @@ pip install -r requirements.txt
 9. Grave, E., Bojanowski, P., Gupta, P., Joulin, A., & Mikolov, T. (2018). Learning word vectors for 157 languages. In Proceedings of the International Conference on Language Resources and Evaluation (LREC 2018).
 10. Fares, M., Kutuzov, A., Oepen, S., & Velldal, E. (2017). Word vectors, reuse, and replicability: Towards a community repository of large-text resources. In Proceedings of the 21st Nordic Conference on Computational Linguistics (pp. 271-276). Association for Computational Linguistics. http://www.aclweb.org/anthology/W17-0237
 11. Che, W., Liu, Y., Wang, Y., Zheng, B., & Liu, T. (2018). Towards better UD parsing: Deep contextualized word embeddings, ensemble, and treebank concatenation. In Proceedings of the CoNLL 2018 Shared Task: Multilingual Parsing from Raw Text to Universal Dependencies (pp. 55-64). Association for Computational Linguistics. Brussels, Belgium. Retrieved from http://www.aclweb.org/anthology/K18-2005.
+12. Onur Güngör and Eray Yıldız. 2017. Linguistic features in Turkish word representations. In 2017 25th Signal Processing and Communications
+Applications Conference (SIU). 1–4. https://doi.org/10.1109/SIU.2017.7960223
+13. Bünyamin Kurt. 2018. Word Embedding Models - Datasets. https://github.com/bunyamink/word-embedding-models/tree/master/datasets/analogy
+14. Aylin Üstün, Murat Kurfalı, and Burcu Can. 2018. Characters or morphemes: How to represent words?. In Proceedings of The Third
+Workshop on Representation Learning for NLP. 144–153.
+15. Gökhan Ercan and Olcay Taner Yıldız. 2018. AnlamVer: Semantic Model Evaluation Dataset for Turkish - Word Similarity and Relatedness.
+In Proceedings of the 27th International Conference on Computational Linguistics. Association for Computational Linguistics, Santa Fe,
+New Mexico, USA, 3819–3836. https://aclanthology.org/C18-1323/
+16. Cumali Türkmenoğlu and A. Cüneyd Tantuğ. 2014. Sentiment Analysis in Turkish Media. In Workshop on Issues of Sentiment Discovery and Opinion Mining, International Conference on Machine Learning (ICML).
+17. Winvoker. 2022. Turkish Sentiment Analysis Dataset. [https://huggingface.co/datasets/winvoker/turkish-sentiment-analysis-dataset](https://huggingface.co/datasets/winvoker/turkish-sentiment-analysis-dataset)
+18. Onur Gungor, Suzan Uskudarli, and Tunga Gungor. 2018. Improving Named Entity Recognition by Jointly Learning to Disambiguate Morphological Tags. In Proceedings of the 27th International Conference on Computational Linguistics (COLING 2018).
+19. Utku Türk, Furkan Atmaca, Saziye Betül Özates, Gözde Berk, Seyyit Talha Bedir, Abdullatif Köksal, Balkiz Öztürk Basaran, Tunga Güngör, and Arzucan Özgür. 2020. Resources for Turkish Dependency Parsing: Introducing the BOUN Treebank and the BoAT Annotation Tool. CoRR abs/2002.10416 (2020). arXiv:2002.10416 https://arxiv.org/abs/2002.10416
