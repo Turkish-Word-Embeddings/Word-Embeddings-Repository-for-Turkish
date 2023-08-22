@@ -21,8 +21,8 @@ pip install -r requirements.txt
 * [Turkish Word Vectors, Corpus and Evaluation Dataset](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/releases/tag/v1.0.0)
 
 ## Open-source Turkish Corpora
-* [BounWebCorpus](https://tulap.cmpe.boun.edu.tr/repository/xmlui/handle/20.500.12913/16)
-* [HuaweiCorpus](https://github.com/onurgu/linguistic-features-in-turkish-word-representations/releases/tag/v1.0) - [\[8\]](https://www.cmpe.boun.edu.tr/~onurgu/publication/gungor-2017-linguistic/gungor-2017-linguistic.pdf)
+* [Boun Web Corpus](https://tulap.cmpe.boun.edu.tr/entities/corpus/c9f404aa-64da-4be5-a173-99b141bde7bd)
+* [HuaweiCorpus](https://github.com/onurgu/linguistic-features-in-turkish-word-representations/releases/tag/v1.0) [\[8\]](https://www.cmpe.boun.edu.tr/~onurgu/publication/gungor-2017-linguistic/gungor-2017-linguistic.pdf)
 * [Turkish CoNLL17 Corpus]( http://vectors.nlpl.eu/repository/)
 
 ## Datasets for Intrinsic Evaluation
