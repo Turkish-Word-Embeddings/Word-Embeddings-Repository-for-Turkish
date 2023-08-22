@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ## Datasets for Intrinsic Evaluation
 
 | Dataset                                                      | Category            | \# Instances |
-|--------------------------------------------------------------|---------------------|--------------|
+|:--------------------------------------------------------------:|:---------------------:|:--------------:|
 | Dataset by Güngör *et al.* [\[12\]](https://ieeexplore.ieee.org/document/7960223/)                            | Syntactic Analogy  | 29,364       |
 | Dataset by Kurt [\[13\]](https://github.com/bunyamink/word-embedding-models/tree/master/datasets/analogy)                                            | Semantic Analogy   | 3,296        |
 | *WordSimTr* [\[14\]](https://wlv.openrepository.com/handle/2436/623576)                                                 | Syntactic Similarity | 140          |
@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ## Datasets for Extrinsic Evaluation
 
 | Task                   | Dataset                                      | Train (\# sentences) | Test (\# sentences) |
-|------------------------|----------------------------------------------|----------------------|---------------------|
+|:------------------------:|:----------------------------------------------:|:----------------------:|:---------------------:|
 | Sentiment analysis     | Turkish Movie Dataset  [\[16\]](https://www.researchgate.net/publication/269634534_Sentiment_Analysis_in_Turkish_Media)                 | 16,100               | 4,144               |
 | Sentiment analysis     | Turkish Sentiment Analysis Dataset  [\[17\]](https://huggingface.co/datasets/winvoker/turkish-sentiment-analysis-dataset)      | 286,854              | 32,873              |
 | Named entity recognition | Turkish National Newspapers with NER labels  [\[18\]](https://aclanthology.org/C18-1177/)  | 28,468               | 2,915               |
