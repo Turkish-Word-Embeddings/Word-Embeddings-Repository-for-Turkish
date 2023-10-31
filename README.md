@@ -58,7 +58,22 @@ pip install -r requirements.txt
 * `elmoformanylangs==0.0.4` (only for Elmo)
     * Please install `overrides==3.1.0` if you face any problem with `elmoformanylangs`. Refer to the related [issue](https://github.com/HIT-SCIR/ELMoForManyLangs/issues/100).
 
-
+## Citation
+For now, you can cite the preprint version of our study. 
+```
+Sarıtaş, Karahan and Oz, Cahid Arda and Güngör, Tunga,
+A Comprehensive Analysis of Static Word Embeddings for Turkish.
+Available at SSRN: https://ssrn.com/abstract=4615519 or http://dx.doi.org/10.2139/ssrn.4615519
+```
+`BibTex` citation:
+```
+@article{2023sweturkish,
+  title = {A Comprehensive Analysis of Static Word Embeddings for Turkish},
+  author = {Sarıtaş, Karahan and Oz, Cahid Arda and Güngör, Tunga},
+  year = {2023},
+  note = {Available at SSRN: \url{https://ssrn.com/abstract=4615519} or DOI: \url{http://dx.doi.org/10.2139/ssrn.4615519}}
+}
+```
 
 ## References
 1. https://en.wikipedia.org/wiki/Word_embedding
