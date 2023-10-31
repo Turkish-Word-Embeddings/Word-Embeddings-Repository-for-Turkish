@@ -65,7 +65,7 @@ Sarıtaş, Karahan and Oz, Cahid Arda and Güngör, Tunga,
 A Comprehensive Analysis of Static Word Embeddings for Turkish.
 Available at SSRN: https://ssrn.com/abstract=4615519 or http://dx.doi.org/10.2139/ssrn.4615519
 ```
-`BibTex` citation:
+$\text{BibTeX}$ citation:
 ```
 @article{2023sweturkish,
   title = {A Comprehensive Analysis of Static Word Embeddings for Turkish},
