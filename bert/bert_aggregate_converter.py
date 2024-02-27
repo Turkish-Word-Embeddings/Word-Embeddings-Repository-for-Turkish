@@ -1,3 +1,9 @@
+# run like:
+# python bert_aggregate_convert.py <input_file> <vocab_file>
+
+from sys import argv
+assert len(argv) == 3, "should run like 'python bert_aggregate_convert.py <input_file> <vocab_file>'"
+
 import re
 from typing import Dict, List
 from tqdm import tqdm
@@ -55,11 +61,11 @@ def load_vocab(vocab_path):
         vocab = map(lambda line: line.strip().split()[0], lines)
     return set(list(vocab))
 
-vocab_path = "../../../cahid.oz@boun.edu.tr/glove/out"
+vocab_path = argv[2]
 vocab = load_vocab(vocab_path)
 
 # open the file
-filename = "input.txt"
+filename = argv[1]
 with open(filename, "r") as file:
     # create a dictionary to store the word index
     index: Dict[str, List[Sentence]] = {}
