@@ -79,6 +79,12 @@ CONFIG = {
         "binary": False,
         "no_header": False,
     },
+    "numberbatch": {
+        "model": os.path.join(FOLDER, "numberbatch.txt"),
+        "dim": 300,
+        "binary": False,
+        "no_header": False,
+    },
 }
 
 
@@ -230,11 +236,13 @@ class LSTM(nn.Module):
         )
         # Because we use pretrained embedding (GLove, Fastext,etc) so we turn off requires_grad-meaning we do not train gradient on embedding weight
         self.embedding.weight.requires_grad = False
+        dropout = 0.4 if hidden_size > 16 else 0
         self.lstm = nn.LSTM(
             embedding_dim,
             hidden_size,
             bidirectional=False,
             batch_first=True,
+            dropout=dropout,
         )
         self.out = (
             nn.Linear(hidden_size * 2, 1)
@@ -512,6 +520,7 @@ if __name__ == "__main__":
             "dc_elmo",
             "dc_bert",
             "x2_bert",
+            "numberbatch",
             "all",
         ],
         default="all",
@@ -538,7 +547,7 @@ if __name__ == "__main__":
         type=int,
     )
     parser.add_argument(
-        "-e", "--epochs", help="Number of epochs, defaults to 5.", default=5, type=int
+        "-e", "--epochs", help="Number of epochs, defaults to 15.", default=15, type=int
     )
     parser.add_argument(
         "-ml",

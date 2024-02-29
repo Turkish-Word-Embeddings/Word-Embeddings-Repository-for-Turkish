@@ -1,4 +1,4 @@
-// Turkish Movie Dataset (15 epochs with early stopping - hidden size: 16)
+-- Dataset #1 Seed: 7 --
 Accuracy for w2v_sg using model lstm: 0.899 with f1 score: 0.923
 Accuracy for w2v_cbow using model lstm: 0.887 with f1 score: 0.913
 Accuracy for ft_sg using model lstm: 0.887 with f1 score: 0.911
@@ -7,7 +7,36 @@ Accuracy for glove using model lstm: 0.884 with f1 score: 0.911
 Accuracy for dc_elmo using model lstm: 0.860 with f1 score: 0.897
 Accuracy for dc_bert using model lstm: 0.840 with f1 score: 0.877
 
-// Turkish Sentiment Analysis (Winvoker) (15 epochs with early stopping - hidden size: 16)
+-- Dataset #1 Seed: 24 --
+Accuracy for w2v_sg using model lstm: 0.872 with f1 score: 0.898
+Accuracy for w2v_cbow using model lstm: 0.887 with f1 score: 0.915
+Accuracy for ft_sg using model lstm: 0.893 with f1 score: 0.918
+Accuracy for w2v_ft_sg_avg using model lstm: 0.892 with f1 score: 0.918
+Accuracy for glove using model lstm: 0.877 with f1 score: 0.909
+Accuracy for dc_elmo using model lstm: 0.847 with f1 score: 0.887
+Accuracy for dc_bert using model lstm: 0.854 with f1 score: 0.891
+
+-- Dataset #1 Seed: 30 --
+Accuracy for w2v_sg using model lstm: 0.893 with f1 score: 0.917
+Accuracy for w2v_cbow using model lstm: 0.889 with f1 score: 0.916
+Accuracy for ft_sg using model lstm: 0.879 with f1 score: 0.911
+Accuracy for w2v_ft_sg_avg using model lstm: 0.893 with f1 score: 0.919
+Accuracy for glove using model lstm: 0.878 with f1 score: 0.905
+Accuracy for dc_elmo using model lstm: 0.863 with f1 score: 0.900
+Accuracy for dc_bert using model lstm: 0.851 with f1 score: 0.888
+
+Average results for dataset #1:
+Accuracy for w2v_sg using model lstm: 0.888 with f1 score: 0.912
+Accuracy for w2v_cbow using model lstm: 0.888 with f1 score: 0.915
+Accuracy for ft_sg using model lstm: 0.886 with f1 score: 0.913
+Accuracy for w2v_ft_sg_avg using model lstm: 0.892 with f1 score: 0.918
+Accuracy for glove using model lstm: 0.880 with f1 score: 0.908
+Accuracy for dc_elmo using model lstm: 0.857 with f1 score: 0.895
+Accuracy for dc_bert using model lstm: 0.848 with f1 score: 0.885
+
+------
+
+-- Dataset #2 Seed: 7 --
 Accuracy for w2v_sg using model lstm: 0.933 with f1 score: 0.959
 Accuracy for w2v_cbow using model lstm: 0.927 with f1 score: 0.956
 Accuracy for ft_sg using model lstm: 0.934 with f1 score: 0.960
@@ -16,12 +45,69 @@ Accuracy for glove using model lstm: 0.930 with f1 score: 0.958
 Accuracy for dc_elmo using model lstm: 0.911 with f1 score: 0.947
 Accuracy for dc_bert using model lstm: 0.917 with f1 score: 0.950
 
-// Turkish Twitter Dataset (Seed: 7, Epoch: 200 with early stopping, Hidden Size: 196)
-Accuracy for w2v_sg using model lstm: 0.708 with f1 score: 0.629
-Accuracy for w2v_cbow using model lstm: 0.695 with f1 score: 0.587
-Accuracy for ft_sg using model lstm: 0.712 with f1 score: 0.603
-Accuracy for w2v_ft_sg_avg using model lstm: 0.714 with f1 score: 0.689
-Accuracy for glove using model lstm: 0.679 with f1 score: 0.495
-Accuracy for dc_elmo using model lstm: 0.710 with f1 score: 0.534
-Accuracy for dc_bert using model lstm: 0.689 with f1 score: 0.519
+-- Dataset #2 Seed: 24 --
+Accuracy for w2v_sg using model lstm: 0.935 with f1 score: 0.961
+Accuracy for w2v_cbow using model lstm: 0.926 with f1 score: 0.956
+Accuracy for ft_sg using model lstm: 0.934 with f1 score: 0.960
+Accuracy for w2v_ft_sg_avg using model lstm: 0.935 with f1 score: 0.961
+Accuracy for glove using model lstm: 0.928 with f1 score: 0.957
+Accuracy for dc_elmo using model lstm: 0.909 with f1 score: 0.946
+Accuracy for dc_bert using model lstm: 0.912 with f1 score: 0.947
 
+-- Dataset #2 Seed: 30 --
+Accuracy for w2v_sg using model lstm: 0.935 with f1 score: 0.961
+Accuracy for w2v_cbow using model lstm: 0.927 with f1 score: 0.956
+Accuracy for ft_sg using model lstm: 0.937 with f1 score: 0.962
+Accuracy for w2v_ft_sg_avg using model lstm: 0.934 with f1 score: 0.960
+Accuracy for glove using model lstm: 0.929 with f1 score: 0.957
+Accuracy for dc_elmo using model lstm: 0.909 with f1 score: 0.946
+Accuracy for dc_bert using model lstm: 0.912 with f1 score: 0.947
+
+Average results for dataset #2:
+Accuracy for w2v_sg using model lstm: 0.935 with f1 score: 0.961
+Accuracy for w2v_cbow using model lstm: 0.927 with f1 score: 0.956
+Accuracy for ft_sg using model lstm: 0.935 with f1 score: 0.961
+Accuracy for w2v_ft_sg_avg using model lstm: 0.935 with f1 score: 0.961
+Accuracy for glove using model lstm: 0.929 with f1 score: 0.957
+Accuracy for dc_elmo using model lstm: 0.909 with f1 score: 0.946
+Accuracy for dc_bert using model lstm: 0.912 with f1 score: 0.947
+
+---
+
+
+-- Dataset #3 Seed: 7 --
+Accuracy for w2v_sg using model lstm: 0.695 with f1 score: 0.444
+Accuracy for w2v_cbow using model lstm: 0.695 with f1 score: 0.577
+Accuracy for ft_sg using model lstm: 0.668 with f1 score: 0.383
+Accuracy for w2v_ft_sg_avg using model lstm: 0.727 with f1 score: 0.683
+Accuracy for glove using model lstm: 0.704 with f1 score: 0.528
+Accuracy for dc_elmo using model lstm: 0.708 with f1 score: 0.544
+Accuracy for dc_bert using model lstm: 0.674 with f1 score: 0.492
+
+-- Dataset #3 Seed: 24 --
+Accuracy for w2v_sg using model lstm: 0.704 with f1 score: 0.594
+Accuracy for w2v_cbow using model lstm: 0.708 with f1 score: 0.564
+Accuracy for ft_sg using model lstm: 0.725 with f1 score: 0.627
+Accuracy for w2v_ft_sg_avg using model lstm: 0.731 with f1 score: 0.600
+Accuracy for glove using model lstm: 0.679 with f1 score: 0.435
+Accuracy for dc_elmo using model lstm: 0.697 with f1 score: 0.459
+Accuracy for dc_bert using model lstm: 0.651 with f1 score: 0.428
+
+-- Dataset #3 Seed: 30 --
+Accuracy for w2v_sg using model lstm: 0.712 with f1 score: 0.676
+Accuracy for w2v_cbow using model lstm: 0.702 with f1 score: 0.510
+Accuracy for ft_sg using model lstm: 0.739 with f1 score: 0.646
+Accuracy for w2v_ft_sg_avg using model lstm: 0.735 with f1 score: 0.661
+Accuracy for glove using model lstm: 0.714 with f1 score: 0.547
+Accuracy for dc_elmo using model lstm: 0.697 with f1 score: 0.493
+Accuracy for dc_bert using model lstm: 0.683 with f1 score: 0.455
+
+
+Average results for dataset #3:
+Accuracy for w2v_sg using model lstm: 0.704 with f1 score: 0.571
+Accuracy for w2v_cbow using model lstm: 0.702 with f1 score: 0.550
+Accuracy for ft_sg using model lstm: 0.711 with f1 score: 0.552
+Accuracy for w2v_ft_sg_avg using model lstm: 0.731 with f1 score: 0.648
+Accuracy for glove using model lstm: 0.699 with f1 score: 0.503
+Accuracy for dc_elmo using model lstm: 0.701 with f1 score: 0.498
+Accuracy for dc_bert using model lstm: 0.669 with f1 score: 0.458
