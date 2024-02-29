@@ -1,3 +1,8 @@
+
+from sys import argv
+assert len(argv) == 2, "should run like 'python bert_converter.py <vocab_file>'"
+
+
 import torch
 
 # OPTIONAL: if you want to have more information on what's happening, activate the logger as follows
@@ -45,7 +50,7 @@ def load_vocab(vocab_path):
         vocab = map(lambda line: line.strip().split()[0], lines)
     return list(vocab)
 
-vocab_path = "../../../cahid.oz@boun.edu.tr/glove/out"
+vocab_path = argv[1]
 vocab = load_vocab(vocab_path)
 # wv = KeyedVectors.load_word2vec_format("word2vec_10epoch_cbow.wordvectors", binary=True)
 # vocab = wv.index_to_key[:400000]
