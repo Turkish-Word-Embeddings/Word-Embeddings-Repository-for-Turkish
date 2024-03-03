@@ -59,6 +59,9 @@ pip install -r requirements.txt
 * `elmoformanylangs==0.0.4` (only for Elmo)
     * Please install `overrides==3.1.0` if you face any problem with `elmoformanylangs`. Refer to the related [issue](https://github.com/HIT-SCIR/ELMoForManyLangs/issues/100).
 
+## Reproducibility
+* To reproduce the intrinsic evaluation results, you should download the corresponding word embedding model from the [release section](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/releases/tag/v1.0.0) and then run the necessary scripts in the [evaluation](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/tree/main/evaluation) folder following the instructions provided [here](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/tree/main/evaluation#readme).
+* To reproduce the extrinsic evaluation results, you should download the corresponding word embedding model from the [release section](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/releases/tag/v1.0.0), then run the necessary NLP task in the [NLP](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/tree/main/NLP) folder with random seeds 7, 24, and 30 (for the third Sentiment Analysis task, please provide hidden size as 196: `-hs 196`). Results provided in our paper are averaged results over these runs with Wilson Intervals.
 ## Citation
 For now, you can cite the preprint version of our study. 
 ```
