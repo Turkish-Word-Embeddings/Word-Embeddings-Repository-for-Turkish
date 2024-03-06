@@ -94,8 +94,7 @@ $\text{BibTeX}$ citation:
 12. Onur Güngör and Eray Yıldız. 2017. Linguistic features in Turkish word representations. In 2017 25th Signal Processing and Communications
 Applications Conference (SIU). 1–4. https://doi.org/10.1109/SIU.2017.7960223
 13. Bünyamin Kurt. 2018. Word Embedding Models - Datasets. https://github.com/bunyamink/word-embedding-models/tree/master/datasets/analogy
-14. Aylin Üstün, Murat Kurfalı, and Burcu Can. 2018. Characters or morphemes: How to represent words?. In Proceedings of The Third
-Workshop on Representation Learning for NLP. 144–153.
+14. Ahmet Üstün, Murathan Kurfalı, and Burcu Can. 2018. Characters or Morphemes: How to Represent Words?. In Proceedings of the Third Workshop on Representation Learning for NLP, pages 144–153, Melbourne, Australia. Association for Computational Linguistics.
 15. Gökhan Ercan and Olcay Taner Yıldız. 2018. AnlamVer: Semantic Model Evaluation Dataset for Turkish - Word Similarity and Relatedness.
 In Proceedings of the 27th International Conference on Computational Linguistics. Association for Computational Linguistics, Santa Fe,
 New Mexico, USA, 3819–3836. https://aclanthology.org/C18-1323/
