@@ -62,6 +62,8 @@ pip install -r requirements.txt
 ## Reproducibility
 * To reproduce the intrinsic evaluation results, you should download the corresponding word embedding model from the [release section](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/releases/tag/v1.0.0) and then run the necessary scripts in the [evaluation](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/tree/main/evaluation) folder following the instructions provided [here](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/tree/main/evaluation#readme).
 * To reproduce the extrinsic evaluation results, you should download the corresponding word embedding model from the [release section](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/releases/tag/v1.0.0), then run the necessary NLP task in the [NLP](https://github.com/Turkish-Word-Embeddings/Word-Embeddings-Repository-for-Turkish/tree/main/NLP) folder with random seeds 7, 24, and 30 providing arguments via command line (for the third Sentiment Analysis task, please set hidden size as 196: `-hs 196`). Results provided in our paper are averaged results over these runs with Wilson Confidence Intervals.
+
+One of our key findings suggests that the word embeddings acquired from the contextual word embedding algorithm Bert outperform the traditional static word embedding models in the majority of both intrinsic and extrinsic evaluation tasks. You can download the X2Static Turkish Bert word embeddings from the following link: https://huggingface.co/CahidArda/bert-turkish-x2static/tree/main
 ## Citation
 For now, you can cite the preprint version of our study. 
 ```
