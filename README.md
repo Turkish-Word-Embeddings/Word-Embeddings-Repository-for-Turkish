@@ -65,20 +65,22 @@ pip install -r requirements.txt
 
 One of our key findings suggests that the word embeddings acquired from the contextual word embedding algorithm Bert outperform the traditional static word embedding models in the majority of both intrinsic and extrinsic evaluation tasks. You can download the X2Static Turkish Bert word embeddings from the following link: https://huggingface.co/CahidArda/bert-turkish-x2static/tree/main
 ## Citation
-For now, you can cite the preprint version of our study. 
+We kindly request you to cite the corresponding paper if you use our results/trained models/benchmark scripts in your work.
 ```
-Sarıtaş, Karahan and Oz, Cahid Arda and Güngör, Tunga,
-A Comprehensive Analysis of Static Word Embeddings for Turkish.
-Available at SSRN: https://ssrn.com/abstract=4615519 or http://dx.doi.org/10.2139/ssrn.4615519
-```
-$\text{BibTeX}$ citation:
-```
-@article{2023sweturkish,
-  title = {A Comprehensive Analysis of Static Word Embeddings for Turkish},
-  author = {Sarıtaş, Karahan and Oz, Cahid Arda and Güngör, Tunga},
-  year = {2023},
-  note = {Available at SSRN: \url{https://ssrn.com/abstract=4615519} or DOI: \url{http://dx.doi.org/10.2139/ssrn.4615519}}
+@article{SARITAS2024124123,
+title = {A comprehensive analysis of static word embeddings for Turkish},
+journal = {Expert Systems with Applications},
+volume = {252},
+pages = {124123},
+year = {2024},
+issn = {0957-4174},
+doi = {https://doi.org/10.1016/j.eswa.2024.124123},
+url = {https://www.sciencedirect.com/science/article/pii/S0957417424009898},
+author = {Karahan Sarıtaş and Cahid Arda Öz and Tunga Güngör},
+keywords = {Static word embeddings, Contextual word embeddings, Embedding models, Turkish},
+abstract = {Word embeddings are fixed-length, dense and distributed word representations that are used in natural language processing (NLP) applications. There are basically two types of word embedding models which are non-contextual (static) models and contextual models. The former method generates a single embedding for a word regardless of its context, while the latter method produces distinct embeddings for a word based on the specific contexts in which it appears. There are plenty of works that compare contextual and non-contextual embedding models within their respective groups in different languages. However, the number of studies that compare the models in these two groups with each other is very few and there is no such study in Turkish. This process necessitates converting contextual embeddings into static embeddings. In this paper, we compare and evaluate the performance of several contextual and non-contextual models in both intrinsic and extrinsic evaluation settings for Turkish. We make a fine-grained comparison by analyzing the syntactic and semantic capabilities of the models separately. The results of the analyses provide insights about the suitability of different embedding models in different types of NLP tasks. We also build a Turkish word embedding repository comprising the embedding models used in this work, which may serve as a valuable resource for researchers and practitioners in the field of Turkish NLP. We make the word embeddings, scripts, and evaluation datasets publicly available.}
 }
+
 ```
 
 ## References
