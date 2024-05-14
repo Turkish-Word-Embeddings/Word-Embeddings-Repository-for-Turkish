@@ -1,4 +1,5 @@
 # Word Embeddings Repository for Turkish
+Our paper can be found here: https://arxiv.org/abs/2405.07778
 
 ## What is this?
 
