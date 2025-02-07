@@ -1,4 +1,6 @@
 # Word Embeddings Repository for Turkish
+[![arXiv](https://img.shields.io/badge/arXiv-2501.15890-B31B1B.svg)](https://arxiv.org/abs/2405.07778)
+
 Our paper can be found here: https://arxiv.org/abs/2405.07778
 
 ## What is this?
